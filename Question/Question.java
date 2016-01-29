@@ -25,6 +25,15 @@ public class Question
    }
 
    /**
+    * Adds text to the question's text.
+    * @param questionText the test to add to this question
+    */
+   public void addText(String questionText)
+   {
+        text += questionText;
+   }
+   
+   /**
       Sets the answer for this question.
       @param correctResponse the answer
    */
