@@ -6,7 +6,8 @@ public class Billfold
     
     public Billfold()
     {
-       
+       card1 = card1;
+       card2 = card2;
     }
     
     public void addCard(Card newcard)
@@ -26,7 +27,14 @@ public class Billfold
     
     public String formatCards()
     {
-        
+        if (card1 != null)
+        {
+            card1.format();
+        }
+        if (card2 != null)
+        {
+            card2.format();
+        }
         String cards = "["+ card1 + "|" + card2 +"]";
         return cards;
     }
