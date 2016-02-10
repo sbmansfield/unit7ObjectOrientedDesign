@@ -4,7 +4,7 @@ import java.util.Collections;
 /**
    A coin with a monetary value.
 */
-public class Coin implements ComparableCoin
+public class Coin implements Comparable<Coin>
 {
    private double value;
    private String name;
