@@ -15,25 +15,26 @@ public class TriangleFrame extends JFrame
         {
             int x = event.getX();
             int y = event.getY();
-            scene.moveRectangleTo(x, y);
+            scene.movePointerTo(x, y);
         }
+        
+        public void mouseReleased(MouseEvent event) 
+        {}
+
+        public void mouseClicked(MouseEvent event) 
+        {}
+
+        public void mouseEntered(MouseEvent event) 
+        {}
+
+        public void mouseExited(MouseEvent event) 
+        {}
+        
     }
-    
-    public void mouseReleased(MouseEvent event) 
-    {}
-
-    public void mouseClicked(MouseEvent event) 
-    {}
-
-    public void mouseEntered(MouseEvent event) 
-    {}
-
-    public void mouseExited(MouseEvent event) 
-    {}
     
     public TriangleFrame()
     {
-        scene = new RextangleComponent();
+        scene = new TriangleComponent();
         add(scene);
         
         MouseListener listener = new MousePressListener();
