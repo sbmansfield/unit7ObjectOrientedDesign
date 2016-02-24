@@ -1,25 +1,24 @@
+import java.awt.BorderLayout;
 import javax.swing.JFrame;
 
 public class DrawingEditor extends JFrame
 {
-    private static final int FRAME_WIDTH = 800;
-    private static final int FRAME_HEIGHT = 800;
-    
-    private DrawingEditor frame;
-    public DrawingEditor()
+    public DrawingEditor(String title)
     {
-        //this.frame = new JFrame("Drawing Editor");
+        super(title);
+        setSize(800, 800);   
         
-        DrawingPanel canvas = new DrawingPanel();
-        ControlPanel controls = new ControlPanel(canvas);
+        //DrawingPanel canvas = new DrawingPanel();
+        //add(canvas);
+        ControlPanel controls = new ControlPanel();
+        add(controls, BorderLayout.PAGE_END);
         
-        this.frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.frame.setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     public static void main(String[] args)
     {
-        DrawingEditor view = new DrawingEditor();
+        DrawingEditor frame = new DrawingEditor("Drawing Editor");
+        frame.setVisible(true);
     }
 }

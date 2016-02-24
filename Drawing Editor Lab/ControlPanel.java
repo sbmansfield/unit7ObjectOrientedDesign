@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -5,37 +6,42 @@ import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import java.awt.Color;
+
 public class ControlPanel extends JPanel
 {
-    private JPanel panel;
     private JPanel label;
+    private JPanel colorPanel;
     private JButton button;
     private JButton button2;
     private JButton button3;
     
-    public ControlPanel(DrawingPanel canvas)
+    public ControlPanel()
     {
-        //this.panel = new JPanel();
+        button = new JButton("Pick Color");
+        add(button);
         
-        this.button = new JButton("Pick Color");
-       // this.ControlPanel.add(this.button);
+        colorPanel = new JPanel();
+        colorPanel.setBackground(Color.BLACK);
+        //colorPanel.setColor(canvas.getColor);
+        add(colorPanel);
         
-        this.button2 = new JButton("Add Circle");
-        this.panel.add(this.button2);
+        button2 = new JButton("Add Circle");
+        add(button2);
         
-        this.button3 = new JButton("Add Square");
-        this.panel.add(this.button3);
-        
+        button3 = new JButton("Add Square");
+        add(button3);
         
         ClickListener listener = new ClickListener();
-        this.button.addActionListener(listener);
-        this.button2.addActionListener(listener);
-        this.button3.addActionListener(listener);
+        button.addActionListener(listener);
+        button2.addActionListener(listener);
+        button3.addActionListener(listener);
     }
     
     public static void main(String[] args)
     {
-        ControlPanel view = new ControlPanel();
+        ControlPanel panel = new ControlPanel();
+        panel.setVisible(true);
     }
 
     public class ClickListener implements ActionListener
