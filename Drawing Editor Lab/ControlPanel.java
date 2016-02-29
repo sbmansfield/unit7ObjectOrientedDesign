@@ -16,14 +16,14 @@ public class ControlPanel extends JPanel
     private JButton button2;
     private JButton button3;
     
-    public ControlPanel()
+    public ControlPanel(DrawingPanel canvas)
     {
         button = new JButton("Pick Color");
         add(button);
         
         colorPanel = new JPanel();
         colorPanel.setBackground(Color.BLACK);
-        //colorPanel.setColor(canvas.getColor);
+        //colorPanel.setColor(canvas.getColor());
         add(colorPanel);
         
         button2 = new JButton("Add Circle");
@@ -36,19 +36,32 @@ public class ControlPanel extends JPanel
         button.addActionListener(listener);
         button2.addActionListener(listener);
         button3.addActionListener(listener);
-    }
-    
-    public static void main(String[] args)
-    {
-        ControlPanel panel = new ControlPanel();
-        panel.setVisible(true);
+        
+        setVisible(true);
     }
 
     public class ClickListener implements ActionListener
     {
         public void actionPerformed(ActionEvent event)
         {
-            System.out.println("Button "+ event.getActionCommand() +" was clicked!");
+            if (event.getSource() == button)
+            {
+                //pick color button
+                
+                // colorPanel.setBackground(canvas.pickColor());
+            }
+            else if (event.getSource() == button2)
+            {
+               //add circle button
+               
+               //canvas.addCircle();
+            }
+            else
+            {
+                //add aquare button
+                
+                //canvas.addSquare();
+            }
         }
     }
 }

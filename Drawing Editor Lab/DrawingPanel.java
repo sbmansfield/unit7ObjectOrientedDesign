@@ -4,14 +4,19 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
+
 public class DrawingPanel extends JPanel
 {
     private ArrayList shapes;
-    //private  activeShape;
+    private Color initialColor;
     
     public DrawingPanel()
     {
-        
+        addMouseListener(new MouseClickListener());
+        setBackground(Color.WHITE);
+        initialColor = Color.BLACK;
     }
 
     public Color getColor()
@@ -34,7 +39,7 @@ public class DrawingPanel extends JPanel
         
     }
     
-    public void addAquare()
+    public void addSquare()
     {
         
     }
@@ -42,5 +47,18 @@ public class DrawingPanel extends JPanel
     public void paintComponent(Graphics g)
     {
         
+    }
+    
+    class MousePressListener implements MouseListener
+    {
+        public void mousePressed(MouseEvent event) 
+        {
+            
+        }
+        public void mouseDragged(MouseEvent event) 
+        {
+            
+        }
+        //public void keyPressed(MouseEvent event) {}
     }
 }

@@ -8,9 +8,10 @@ public class DrawingEditor extends JFrame
         super(title);
         setSize(800, 800);   
         
-        //DrawingPanel canvas = new DrawingPanel();
-        //add(canvas);
-        ControlPanel controls = new ControlPanel();
+        DrawingPanel canvas = new DrawingPanel();
+        add(canvas, BorderLayout.CENTER);
+        
+        ControlPanel controls = new ControlPanel(canvas);
         add(controls, BorderLayout.PAGE_END);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
