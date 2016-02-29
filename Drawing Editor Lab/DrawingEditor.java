@@ -3,9 +3,9 @@ import javax.swing.JFrame;
 
 public class DrawingEditor extends JFrame
 {
-    public DrawingEditor(String title)
+    public DrawingEditor()
     {
-        super(title);
+        setTitle("Drawing Editor");
         setSize(800, 800);   
         
         DrawingPanel canvas = new DrawingPanel();
@@ -15,11 +15,11 @@ public class DrawingEditor extends JFrame
         add(controls, BorderLayout.PAGE_END);
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
     
     public static void main(String[] args)
     {
-        DrawingEditor frame = new DrawingEditor("Drawing Editor");
-        frame.setVisible(true);
+        DrawingEditor frame = new DrawingEditor();
     }
 }

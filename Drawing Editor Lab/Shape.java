@@ -2,7 +2,7 @@ import java.awt.geom.Point2D;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class Shape
+public abstract class Shape
 {
 
     public Shape(Point2D.Double center, double radius, Color color) 
@@ -34,12 +34,7 @@ public class Shape
     {
         return true;
     }
-    
-    public boolean isOnBorder(Point2D.Double point)
-    {
-        return true;
-    }
-    
+
     public void draw(Graphics2D g2, boolean filled)
     {
         
