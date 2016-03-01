@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JColorChooser;
-import javax.swing.colorchooser.AbstractColorChooserPanel;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -12,7 +11,7 @@ import java.awt.event.MouseListener;
 public class DrawingPanel extends JPanel
 {
     private ArrayList shapes;
-
+    private Color currentColor;
     private Color initialColor;
     
     public DrawingPanel()
@@ -25,7 +24,7 @@ public class DrawingPanel extends JPanel
 
     public Color getColor()
     {
-        return getBackground();
+        return currentColor;
     }
     
     public Dimension getPreferredSize()
@@ -35,8 +34,7 @@ public class DrawingPanel extends JPanel
     
     public void pickColor()
     {
-        addChooserPanel(canvas);
-        //setColor();
+        currentColor = JColorChooser.showDialog(this, "Color Chooser", initialColor);
     }
     
     public void addCircle()

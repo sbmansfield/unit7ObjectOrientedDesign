@@ -15,15 +15,16 @@ public class ControlPanel extends JPanel
     private JButton button;
     private JButton button2;
     private JButton button3;
+    private DrawingPanel canvas;
     
-    public ControlPanel(DrawingPanel canvas)
+    public ControlPanel(DrawingPanel canv)
     {
+        canvas = canv;
         button = new JButton("Pick Color");
         add(button);
         
         colorPanel = new JPanel();
-        colorPanel.setBackground(Color.BLACK);
-        //colorPanel.setColor(canvas.getColor());
+        colorPanel.setBackground(canvas.getColor());
         add(colorPanel);
         
         button2 = new JButton("Add Circle");
@@ -47,19 +48,16 @@ public class ControlPanel extends JPanel
             if (event.getSource() == button)
             {
                 //pick color button
-                
-                // colorPanel.setBackground(canvas.pickColor());
+                canvas.pickColor();
             }
             else if (event.getSource() == button2)
             {
                //add circle button
-               
                //canvas.addCircle();
             }
             else
             {
                 //add aquare button
-                
                 //canvas.addSquare();
             }
         }
