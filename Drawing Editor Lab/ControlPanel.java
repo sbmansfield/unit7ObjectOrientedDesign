@@ -24,7 +24,7 @@ public class ControlPanel extends JPanel
         add(button);
         
         colorPanel = new JPanel();
-        colorPanel.setBackground(canvas.getColor());
+        colorPanel.setBackground(Color.BLACK);
         add(colorPanel);
         
         button2 = new JButton("Add Circle");
@@ -49,6 +49,7 @@ public class ControlPanel extends JPanel
             {
                 //pick color button
                 canvas.pickColor();
+                colorPanel.setBackground( canvas.getColor() );
             }
             else if (event.getSource() == button2)
             {

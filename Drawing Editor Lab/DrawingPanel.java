@@ -11,7 +11,6 @@ import java.awt.event.MouseListener;
 public class DrawingPanel extends JPanel
 {
     private ArrayList shapes;
-    private Color currentColor;
     private Color initialColor;
     
     public DrawingPanel()
@@ -24,7 +23,7 @@ public class DrawingPanel extends JPanel
 
     public Color getColor()
     {
-        return currentColor;
+        return initialColor;
     }
     
     public Dimension getPreferredSize()
@@ -34,7 +33,11 @@ public class DrawingPanel extends JPanel
     
     public void pickColor()
     {
-        currentColor = JColorChooser.showDialog(this, "Color Chooser", initialColor);
+        Color initColor = JColorChooser.showDialog(this, "Color Chooser", initialColor);
+        if (initColor != null)
+        {
+            initialColor = initColor;
+        }
     }
     
     public void addCircle()
@@ -49,23 +52,19 @@ public class DrawingPanel extends JPanel
     
     public void paintComponent(Graphics g)
     {
-        
+        super.paintComponent(g);
     }
     
     public class MousePressListener implements MouseListener
     {
         public void mousePressed(MouseEvent event) 
         {
-            
+            setRadius( event.getX(), event.getY() );
         }
-        public void mouseClicked(MouseEvent event)
-        {}
-        public void mouseEntered(MouseEvent event)
-        {}
-        public void mouseExited(MouseEvent event)
-        {}
-        public void mouseReleased(MouseEvent event)
-        {}
+        public void mouseClicked(MouseEvent event){}
+        public void mouseEntered(MouseEvent event){}
+        public void mouseExited(MouseEvent event){}
+        public void mouseReleased(MouseEvent event){}
     }
     
     public class MouseMotionListener implements MouseListener
@@ -78,15 +77,10 @@ public class DrawingPanel extends JPanel
         {
             
         }
-        public void mouseExited(MouseEvent event)
-        {}
-        public void mouseEntered(MouseEvent event)
-        {}
-        public void mouseReleased(MouseEvent event)
-        {}
-        public void mousePressed(MouseEvent event) 
-        {}
-        public void mouseClicked(MouseEvent event)
-        {}
+        public void mouseExited(MouseEvent event){}
+        public void mouseEntered(MouseEvent event){}
+        public void mouseReleased(MouseEvent event){}
+        public void mousePressed(MouseEvent event) {}
+        public void mouseClicked(MouseEvent event){}
     }
 }
