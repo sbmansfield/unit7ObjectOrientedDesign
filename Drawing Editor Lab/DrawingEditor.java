@@ -3,6 +3,9 @@ import javax.swing.JFrame;
 
 public class DrawingEditor extends JFrame
 {
+    /**
+     * Constructor for class DrawingEditor
+     */
     public DrawingEditor()
     {
         setTitle("Drawing Editor");
@@ -18,6 +21,9 @@ public class DrawingEditor extends JFrame
         setVisible(true);
     }
     
+    /**
+     * Creates a new DrawingEditor object which opens a window on the screen 
+     */
     public static void main(String[] args)
     {
         DrawingEditor frame = new DrawingEditor();

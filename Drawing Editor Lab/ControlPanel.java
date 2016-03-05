@@ -1,7 +1,6 @@
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,13 +9,22 @@ import java.awt.Color;
 
 public class ControlPanel extends JPanel
 {
-    private JPanel label;
+    //color panel for JColorChooser
     private JPanel colorPanel;
+    //pick color button
     private JButton button;
+    //add circle button
     private JButton button2;
+    //add square button
     private JButton button3;
+    //canvas for the drawing panel
     private DrawingPanel canvas;
     
+    /**
+     * Constructor for class ControlPanel
+     *
+     * @param  canv   a DrawingPanel object
+     */
     public ControlPanel(DrawingPanel canv)
     {
         canvas = canv;
@@ -54,12 +62,12 @@ public class ControlPanel extends JPanel
             else if (event.getSource() == button2)
             {
                //add circle button
-               //canvas.addCircle();
+               canvas.addCircle();
             }
             else
             {
-                //add aquare button
-                //canvas.addSquare();
+                //add square button
+                canvas.addSquare();
             }
         }
     }
