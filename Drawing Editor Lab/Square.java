@@ -28,8 +28,6 @@ public class Square extends Shape
     {
         super(center, radius, color);
         
-        x = super.getCenter().getX()-super.getRadius();
-        y = x;
         width = 2*super.getRadius();
         height = width;
     }
@@ -57,16 +55,22 @@ public class Square extends Shape
      */
     public void draw(Graphics2D g2, boolean filled)
     {
+        x = super.getCenter().getX()-super.getRadius();
+        y = super.getCenter().getY()-super.getRadius();
         newSquare = new Rectangle2D.Double(x, y, width, height);
-        g2.setPaint(shapeColor);
         
         if ( filled == true )
         {
+            g2.setPaint(shapeColor);
             g2.fill(newSquare);
         }
         else
         {
+            g2.setPaint(Color.WHITE);
+            g2.fill(newSquare);
+            g2.setPaint(shapeColor);
             g2.draw(newSquare);
         }
     }
 }
+

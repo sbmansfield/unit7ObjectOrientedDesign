@@ -4,8 +4,11 @@ import java.awt.Graphics2D;
 
 public abstract class Shape
 {
-    private Point2D.Double center;
-    private double radius;
+    //center of the shape
+    private Point2D.Double shapeCenter;
+    //shape radius
+    private double shapeRadius;
+    //shape's color (filled or outlined)
     protected Color shapeColor;
     
     /**
@@ -17,8 +20,8 @@ public abstract class Shape
      */
     public Shape(Point2D.Double center, double radius, Color color) 
     {
-        this.center = center;
-        this.radius = radius;
+        shapeCenter = center;
+        shapeRadius = radius;
         shapeColor = color;
     }
 
@@ -29,7 +32,7 @@ public abstract class Shape
      */
     public Point2D.Double getCenter() 
     {
-        return center;
+        return shapeCenter;
     }
     
     /**
@@ -39,16 +42,16 @@ public abstract class Shape
      */
     public double getRadius()  
     {
-        return radius;
+        return shapeRadius;
     }
     
     /**
-     * Displaces the center of this shape by (x, y).
+     * Displaces the center of this shape to (x, y).
      *
      */
     public void move(double x, double y)
     {
-        
+        shapeCenter = new Point2D.Double(x, y);
     }
     
     /**
@@ -58,7 +61,7 @@ public abstract class Shape
      */
     public void setRadius(double r)
     {
-        radius = r;
+        shapeRadius = r;
     }
     
     public abstract boolean isInside(Point2D.Double point);
